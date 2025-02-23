@@ -1,0 +1,84 @@
+.img-album {
+    max-width: 100%;
+}
+
+.album {
+    margin: 10px 0;
+}
+
+.title {
+    background-color: #1DB954; 
+    color: rgb(255, 255, 255);             
+    width: 50%;              
+    margin: 10px auto;     
+    text-align: center;       
+    border-radius: 30px;      
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}
+
+.music-title {
+    background-color: #1DB954; 
+    color: rgb(255, 255, 255);  
+    display: inline-flex;      
+    padding: 10px 20px;       
+    text-align: left;         
+    margin: 20px auto;        
+    border-radius: 30px;      
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+}   
+
+
+.btn-voltar {
+    display: inline-block;        
+    background-color: #ffffff;   
+    color: black;               
+    text-decoration: none;      
+    padding: 7px 10px;          
+    border-radius: 30px;         
+    font-weight: bold;           
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    transition: all 0.3s ease;  
+}
+
+
+.btn-voltar:hover {
+    background-color: #17a74b;   
+    transform: scale(1.1);       
+}
+
+
+body {
+    background-color: black;
+    color: white;
+    padding: 0;
+    font-family: Arial, sans-serif; 
+}
+
+.btn-success {
+    display: inline-block;     
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);         
+    text-decoration: none;       
+    padding: 7px 10px;          
+    border-radius: 30px;         
+    font-weight: bold;            
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;   
+}
+
+.btn-success:hover {
+    background-color: #17a74b;   
+    transform: scale(1.1);       
+}
+
+.album-link {
+    color: white;
+    
+}
+
+
+.btn-voltar, .btn-success {
+    margin: 5px; 
+    display: inline-block; 
+}
+
