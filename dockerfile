@@ -1,23 +1,18 @@
-# Usando a imagem PHP oficial
-FROM php:7.4-apache
+# Usando a imagem oficial do PHP
+FROM php:8.3-apache
 
-# Habilitar mod_rewrite para Apache (se necessário)
-RUN a2enmod rewrite
+# Copiar todos os arquivos do seu projeto para o diretório de trabalho no Docker
+COPY . /var/www/html/
 
-# Instalar dependências do Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Instalar dependências, como o Composer (caso necessário)
+RUN apt-get update && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd \
+    && curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer
 
-# Definir diretório de trabalho
-WORKDIR /var/www/html
-
-# Copiar os arquivos do projeto para o contêiner
-COPY . .
-
-# Rodar composer para instalar as dependências
-RUN composer install
-
-# Expor a porta padrão do Apache
+# Expor a porta 80 para o Apache
 EXPOSE 80
 
-# Iniciar o servidor Apache
+# Iniciar o Apache no Docker
 CMD ["apache2-foreground"]
